@@ -22,20 +22,20 @@ const cards = [
 
 export default function FriendsToast() {
   return (
-    <section className="py-20 px-4 relative max-w-5xl mx-auto">
-      <div className="text-center mb-16">
-        <span className="text-xs uppercase font-mono tracking-[0.3em] text-purple-400 font-semibold">
+    <section className="py-14 sm:py-20 px-4 relative max-w-5xl mx-auto">
+      <div className="text-center mb-10 sm:mb-16">
+        <span className="text-[11px] sm:text-xs uppercase font-mono tracking-[0.25em] sm:tracking-[0.3em] text-purple-400 font-semibold">
           From Me To All of You
         </span>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-cinzel text-glow-purple text-white font-bold mt-2">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl font-cinzel text-glow-purple text-white font-bold mt-2">
           За Нас, За Дружбу, За Движ! 🥂🎃
         </h2>
-        <p className="text-purple-200/80 max-w-xl mx-auto mt-3 text-sm sm:text-base">
+        <p className="text-purple-200/80 max-w-xl mx-auto mt-2.5 sm:mt-3 text-xs sm:text-base px-2">
           Спасибо каждому, кто делает эту жизнь ярче и интереснее
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
         {cards.map((c, idx) => (
           <motion.div
             key={idx}
@@ -43,15 +43,15 @@ export default function FriendsToast() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: idx * 0.15, duration: 0.5 }}
-            className="glass p-6 sm:p-8 rounded-3xl border border-purple-500/30 hover:border-orange-500/50 transition-all duration-300 relative group overflow-hidden"
+            className="glass p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-purple-500/30 hover:border-orange-500/50 transition-all duration-300 relative group overflow-hidden"
           >
-            <div className="text-4xl mb-4 p-3 w-fit rounded-2xl glass border border-purple-400/20 group-hover:scale-110 transition-transform">
+            <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 p-2.5 sm:p-3 w-fit rounded-xl sm:rounded-2xl glass border border-purple-400/20 group-hover:scale-110 transition-transform">
               {c.icon}
             </div>
-            <h3 className="text-xl font-bold font-cinzel text-amber-200 mb-2">
+            <h3 className="text-lg sm:text-xl font-bold font-cinzel text-amber-200 mb-1.5 sm:mb-2">
               {c.title}
             </h3>
-            <p className="text-sm text-purple-200/90 leading-relaxed">
+            <p className="text-xs sm:text-sm text-purple-200/90 leading-relaxed">
               {c.text}
             </p>
           </motion.div>

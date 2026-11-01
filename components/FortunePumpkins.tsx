@@ -56,17 +56,17 @@ export default function FortunePumpkins() {
       </div>
 
       {/* Selector */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4 mb-6 sm:mb-8">
         {fortunes.map((f) => {
           const isSelected = activeFortune === f.id;
           return (
             <button
               key={f.id}
               onClick={() => setActiveFortune(f.id)}
-              className={`p-5 rounded-2xl glass transition-all duration-300 text-center relative overflow-hidden flex flex-col items-center cursor-pointer border ${
+              className={`p-3 sm:p-5 rounded-xl sm:rounded-2xl glass transition-all duration-300 text-center relative overflow-hidden flex flex-col items-center cursor-pointer border ${
                 isSelected
-                  ? "border-orange-500 shadow-[0_0_30px_rgba(255,107,43,0.4)] scale-105"
-                  : "border-purple-500/20 hover:border-purple-400/40 hover:scale-102"
+                  ? "border-orange-500 shadow-[0_0_30px_rgba(255,107,43,0.4)] scale-102 sm:scale-105"
+                  : "border-purple-500/20 hover:border-purple-400/40"
               }`}
             >
               {isSelected && (
@@ -76,7 +76,7 @@ export default function FortunePumpkins() {
                 />
               )}
               {/* Pumpkin SVG */}
-              <div className="w-16 h-16 sm:w-20 sm:h-20 mb-3 relative">
+              <div className="w-12 h-12 sm:w-20 sm:h-20 mb-2 sm:mb-3 relative">
                 <svg
                   viewBox="0 0 100 100"
                   className={`w-full h-full transition-all duration-300 ${
@@ -110,7 +110,7 @@ export default function FortunePumpkins() {
                 </svg>
               </div>
 
-              <span className="text-xs font-semibold uppercase tracking-wider text-purple-300">
+              <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-purple-300 line-clamp-1">
                 {f.title}
               </span>
             </button>
@@ -129,15 +129,15 @@ export default function FortunePumpkins() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.3 }}
-              className="glass p-8 sm:p-10 rounded-3xl border border-orange-500/40 text-center relative overflow-hidden shadow-[0_0_40px_rgba(255,107,43,0.2)]"
+              className="glass p-5 sm:p-10 rounded-2xl sm:rounded-3xl border border-orange-500/40 text-center relative overflow-hidden shadow-[0_0_40px_rgba(255,107,43,0.2)]"
             >
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-mono font-medium text-orange-300 bg-orange-500/20 border border-orange-500/30 mb-4">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-mono font-medium text-orange-300 bg-orange-500/20 border border-orange-500/30 mb-3 sm:mb-4">
                 {f.badge}
               </span>
-              <p className="text-2xl sm:text-3xl font-cormorant italic text-amber-200 font-semibold mb-3">
+              <p className="text-xl sm:text-3xl font-cormorant italic text-amber-200 font-semibold mb-2 sm:mb-3">
                 {f.text}
               </p>
-              <p className="text-sm sm:text-base text-purple-200/90 max-w-xl mx-auto">
+              <p className="text-xs sm:text-base text-purple-200/90 max-w-xl mx-auto leading-relaxed">
                 {f.subtext}
               </p>
             </motion.div>

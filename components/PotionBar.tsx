@@ -47,13 +47,13 @@ const potions = [
 
 export default function PotionBar() {
   return (
-    <section className="py-20 px-4 relative max-w-6xl mx-auto">
-      <div className="text-center mb-16">
+    <section className="py-14 sm:py-20 px-4 relative max-w-6xl mx-auto">
+      <div className="text-center mb-10 sm:mb-16">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="inline-block text-xs uppercase tracking-[0.3em] text-orange-400 font-semibold mb-2"
+          className="inline-block text-[11px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.3em] text-orange-400 font-semibold mb-2"
         >
           Spooky Brews & Buffs
         </motion.div>
@@ -62,7 +62,7 @@ export default function PotionBar() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-3xl sm:text-4xl md:text-5xl font-cinzel text-glow-gold text-white font-bold"
+          className="text-2xl sm:text-4xl md:text-5xl font-cinzel text-glow-gold text-white font-bold"
         >
           Хеллоуинский Бар для Друзей 🍸
         </motion.h2>
@@ -71,13 +71,13 @@ export default function PotionBar() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="text-purple-200/80 max-w-xl mx-auto mt-4 text-sm sm:text-base"
+          className="text-purple-200/80 max-w-xl mx-auto mt-3 sm:mt-4 text-xs sm:text-base px-2"
         >
           Выбирай своё магическое зелье на эту праздничную ночь
         </motion.p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         {potions.map((potion, idx) => (
           <motion.div
             key={idx}
@@ -85,20 +85,20 @@ export default function PotionBar() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: idx * 0.15, duration: 0.6 }}
-            className={`glass p-6 sm:p-8 rounded-3xl border ${potion.border} bg-gradient-to-br ${potion.color} transition-all duration-300 ${potion.glow}`}
+            className={`glass p-5 sm:p-8 rounded-2xl sm:rounded-3xl border ${potion.border} bg-gradient-to-br ${potion.color} transition-all duration-300 ${potion.glow}`}
           >
-            <div className="flex items-start gap-4">
-              <span className="text-4xl p-3 rounded-2xl glass border border-white/10 shrink-0">
+            <div className="flex items-start gap-3.5 sm:gap-4">
+              <span className="text-3xl sm:text-4xl p-2.5 sm:p-3 rounded-xl sm:rounded-2xl glass border border-white/10 shrink-0">
                 {potion.icon}
               </span>
               <div>
-                <div className="text-xs font-mono tracking-wider text-amber-300 font-semibold uppercase mb-1">
+                <div className="text-[10px] sm:text-xs font-mono tracking-wider text-amber-300 font-semibold uppercase mb-1">
                   {potion.effect}
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold font-cinzel text-white mb-2">
+                <h3 className="text-lg sm:text-2xl font-bold font-cinzel text-white mb-1.5 sm:mb-2">
                   {potion.name}
                 </h3>
-                <p className="text-sm sm:text-base text-[#D4C8E8] leading-relaxed">
+                <p className="text-xs sm:text-base text-[#D4C8E8] leading-relaxed">
                   {potion.description}
                 </p>
               </div>
